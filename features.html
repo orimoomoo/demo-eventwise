@@ -5,20 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eventwise – Key Features</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./styles/styles.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="styles/styles.css">
   <style>
-    body {
-      background-color: #ffffff;
-      line-height: 1.6;
-    }
-    header, footer {
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+
     .section-heading {
       position: relative;
       display: inline-block;
@@ -35,9 +24,11 @@
       margin: 6px auto 0 auto;
       border-radius: 2px;
     }
-
+    .nav-link:hover {
+      color: #1f5f4c;
+    }
     .card {
-      background-color: #f8f9fa;
+      background-color: #f9f2e7;
       border: none;
       transition: 0.4s ease;
       border-radius: 15px;
@@ -47,7 +38,7 @@
       box-shadow: 0 10px 20px rgba(16, 105, 78, 0.2);
     }
     .btn-custom {
-      background-color: #0b5ed7;
+      background-color: #ff6f61;
       color: #fff;
       border: none;
       padding: 12px 30px;
@@ -60,7 +51,7 @@
       color: #fff;
     }
     .highlight-tag {
-      background-color: #20c997;
+      background-color: #7d0e22;
       color: #fff;
       padding: 5px 12px;
       border-radius: 30px;
@@ -94,7 +85,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #20c997;
+      background-color: #b12316;
       border: none;
       padding: 12px 20px;
       border-radius: 50px;
@@ -114,33 +105,31 @@
 
 <!-- Navigation -->
 <header class="p-3 bg-light text-white">
-  <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="./homepage.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img src="./images/Eventwise-removebg-preview.png" height="140">
-          </a>
-
-          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
-              <li><a href="./about.html" class="nav-link px-2 text-black">About</a></li>
-              <li><a href="./features.html" class="nav-link px-2 text-secondary">Features</a></li>
-              <li><a href="./pricing.html" class="nav-link px-2 text-black">Pricing</a></li>
-          </ul>
-
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="./homepage.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <img src="./images/Eventwise-removebg-preview.png" height="140">
+            </a>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
+                <li><a href="./about.html" class="nav-link px-2 text-black">About</a></li>
+                <li><a href="./features.html" class="nav-link px-2 text-secondary">Features</a></li>
+                <li><a href="./howitworks.html" class="nav-link px-2 text-black">How It Works</a></li>
+            </ul>
 
             <div class="btnOnTheNav">
                 <a class="btn btn-secondary me-2" href="./login.html" role="button">Login</a>
                 <a class="btn btn-primary me-2" href="./signup.html" role="button">Sign-up</a>
             </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </header>
 <!-- End of Navigation -->
 
 <!-- Floating Avatar and Introduction -->
 <section class="text-center my-5">
-  <img src="./images/arielle-tan-avatar.png" alt="Arielle Tan" class="floating-avatar rounded-circle mb-3">
-  <h1 class="fw-bold">Hi, I'm <Ri:a></Ri:a>Arielle Tan!</h1>
+  <img src="./images/eventwise_genie.png" alt="Maari" class="floating-avatar rounded-circle mb-3">
+  <h1 class="fw-bold">Hi, I'm <Ri:a></Ri:a>Maari!</h1>
   <p class="fs-4">
     🎉 Discover how <strong>Eventwise</strong> can make your event planning effortless! 🌟
   </p>
@@ -199,52 +188,96 @@
 </section>
 
 <!-- Chat Popup -->
-<div id="chatContainer" class="card p-3">
+<!-- <div id="chatContainer" class="card p-3">
   <div class="d-flex justify-content-between align-items-center mb-2">
-    <strong style="color:#20c997;">Arielle</strong>
+    <strong style="color:#20c997;">Maari</strong>
     <button type="button" class="btn-close" aria-label="Close" onclick="toggleChat()"></button>
   </div>
   <div id="chatMessages" style="height: 200px; overflow-y: auto; background: #f8f9fa; padding: 10px; border-radius: 5px;">
-    <div><strong>Arielle:</strong> Hi there! 👋 Need help planning your event?</div>
+    <div><strong>Maari:</strong> Hi there! 👋 Need help planning your event?</div>
   </div>
   <input id="userInput" type="text" class="form-control my-2" placeholder="Ask me anything..." onkeypress="if(event.key==='Enter') sendMessage()">
   <button class="btn btn-custom w-100" onclick="sendMessage()">Send</button>
-</div>
+</div> -->
 
 <!-- Floating Chat Button -->
-<button onclick="toggleChat()" id="chatButton">💬 Ask Arielle</button>
+<!-- <button onclick="toggleChat()" id="chatButton" class="animate__animated animate__bounceIn">
+  💬 Ask Maari
+</button> -->
 
 <!-- Footer -->
 <footer class="text-center py-4 border-top mt-5">
   <p class="text-muted mb-1">© 2025 Eventwise by Nala</p>
   <div>
-    <a href="./homepage.html" class="text-muted px-2 text-decoration-none">Home</a> |
-    <a href="./about.html" class="text-muted px-2 text-decoration-none">About</a> |
-    <a href="./features.html" class="text-muted px-2 text-decoration-none">Features</a> |
-    <li><a href="./howitworks.html" class="nav-link px-2 text-secondary">How It Works</a></li>>
+    <a href="#" class="text-muted px-2">Home</a> |
+    <a href="#" class="text-muted px-2">About</a> |
+    <a href="#" class="text-muted px-2">Features</a> |
+    <a href="#" class="text-muted px-2">Pricing</a>
   </div>
 </footer>
-<!-- End of Footer -->
 
-<!-- JS Scripts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 <script>
-function toggleChat() {
-  const chat = document.getElementById('chatContainer');
-  chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
-}
-function sendMessage() {
-  const userInput = document.getElementById('userInput');
-  const chatMessages = document.getElementById('chatMessages');
-  if (userInput.value.trim() !== '') {
-    const userMessage = document.createElement('div');
-    userMessage.innerHTML = `<strong>You:</strong> ${userInput.value}`;
-    chatMessages.appendChild(userMessage);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-    userInput.value = '';
+  function toggleChat() {
+    const chat = document.getElementById('chatContainer');
+    const button = document.getElementById('chatButton');
+    if (chat.style.display === 'block') {
+      chat.style.display = 'none';
+      button.classList.remove('animate__heartBeat');
+    } else {
+      chat.style.display = 'block';
+      button.classList.add('animate__heartBeat');
+    }
   }
-}
-</script>
 
+  function sendMessage() {
+    const userInput = document.getElementById('userInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const message = userInput.value.trim();
+
+    if (message !== '') {
+      // Add user message
+      const userMessage = document.createElement('div');
+      userMessage.innerHTML = `<strong>You:</strong> ${message}`;
+      chatMessages.appendChild(userMessage);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      userInput.value = '';
+
+      // Show typing animation
+      const typingIndicator = document.createElement('div');
+      typingIndicator.id = 'typingIndicator';
+      typingIndicator.innerHTML = `<em>Maari is typing...</em>`;
+      chatMessages.appendChild(typingIndicator);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // Simulate bot reply after delay
+      setTimeout(() => {
+        typingIndicator.remove();
+        const botReply = document.createElement('div');
+        botReply.innerHTML = `<strong>Maari:</strong> ${getBotReply(message)}`;
+        chatMessages.appendChild(botReply);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 1000);
+    }
+  }
+
+  // Simple bot response logic
+  function getBotReply(userText) {
+    userText = userText.toLowerCase();
+    if (userText.includes('price') || userText.includes('cost')) {
+      return "We offer flexible pricing plans! Check out the Pricing page for full details. 💸";
+    } else if (userText.includes('features') || userText.includes('do')) {
+      return "Great question! Eventwise helps you with planning, automated invites, RSVPs, themes, payments, and analytics. 🎯";
+    } else if (userText.includes('help') || userText.includes('support')) {
+      return "I'm here to help! You can also contact our support team anytime at support@eventwise.com.🙌";
+    } else if (userText.includes('hi') || userText.includes('hello')) {
+      return "Hello!How can I assist you with your event today?";
+    } else {
+      return "I'm not sure about that, but I'd love to help! Could you clarify your question?😊";
+    }
+  }
+</script>
+<script src="./scripts/animations.js"></script>
 </body>
 </html>
-

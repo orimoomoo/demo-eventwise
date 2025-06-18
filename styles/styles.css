@@ -93,6 +93,11 @@
   left: -250px;
 }
 
+.nav-item{
+  z-index:200;
+  position:relative;
+}
+
 /* Mobile Sidebar toggle */
 @media (max-width: 768px) {
   #sidebar {
@@ -127,7 +132,10 @@ main {
   height: 170px; /* Adjust the height of the logo */
   width: auto;  /* Maintain aspect ratio */
   object-fit: contain;
+  pointer-events: none;
   padding-left: 25px;
+  z-index: 1;
+  position:relative;
 }
 
 .nav {
@@ -438,8 +446,16 @@ input, select, textarea, button {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   padding: 25px;
   margin-bottom: 20px;
-  height: calc(100vh - 250px); /* Need this for Scrolling */
+
+  /* Need this for Scrolling */
+  /* height: calc(100vh - 250px); */
+
   overflow-y: auto;
+}
+
+.scroll-box {
+
+height: calc(74vh - 250px);
 }
 
 .carousel-item img {
@@ -505,4 +521,19 @@ input, select, textarea, button {
 
 .bg-warning text-white {
 bg-color: #B48686 !important;
+}
+
+header, footer {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.blankSpace{
+  margin-top: 80px;
+}
+.blankSpace2{
+  margin-top: 40px;
 }

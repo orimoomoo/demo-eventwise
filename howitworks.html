@@ -1,177 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventwise</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventwise</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="./styles/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  />
+
+  <!-- Highlight CSS -->
+<style>
+  .highlighted {
+    animation: borderFlash 2s ease-in-out;
+  }
+
+  @keyframes borderFlash {
+    0% {
+      border-color: #0f0724;
+      box-shadow: 0 0 0 3px rgba(179, 177, 177, 0.5); 
+    }
+    50% {
+      border-color: #5b5b5b;
+    }
+    100% {
+      border-color: inherit;
+      box-shadow: none;
+    }
+  }
+</style>
+
+
 </head>
 <body>
-    
-<!-- Navigation -->
-<header class="p-3 bg-light text-white">
+  <!-- Navigation -->
+  <header class="p-3 bg-light text-white">
     <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="./homepage.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="./images/Eventwise-removebg-preview.png" height="140">
-            </a>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a
+          href="./homepage.html"
+          class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"
+        >
+          <img src="./images/Eventwise-removebg-preview.png" height="140" />
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
+          <li><a href="./about.html" class="nav-link px-2 text-black">About</a></li>
+          <li><a href="./features.html" class="nav-link px-2 text-black">Features</a></li>
+          <li><a href="./howitworks.html" class="nav-link px-2 text-secondary">How It Works</a></li>
+        </ul>
+        <div class="btnOnTheNav">
+          <a class="btn btn-secondary me-2" href="./login.html" role="button">Login</a>
+          <a class="btn btn-primary me-2" href="./signup.html" role="button">Sign-up</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- End of Navigation -->
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
-                <li><a href="./about.html" class="nav-link px-2 text-black">About</a></li>
-                <li><a href="./features.html" class="nav-link px-2 text-black">Features</a></li>
-                <li><a href="./howitworks.html" class="nav-link px-2 text-secondary">How It Works</a></li>
-            </ul>
+  <!-- How It Works Section -->
+  <div class="container py-4">
+    <div class="row">
+      <!-- Main Left Content Column -->
+      <div class="col-lg-9">
+        <h2 class="mb-4 text-secondary fw-bold">Getting Started with Eventwise</h2>
 
+        <section id="signup" class="mb-4 p-4 border-start border-4 border-primary bg-light rounded highlight-target">
+          <h4><i class="bi bi-person-circle me-2"></i>1. Sign Up / Login</h4>
+          <p>
+            To access Eventwise, start by registering for a free account or logging in with your existing credentials.
+            This will unlock all core features, including event creation, task management, and collaborative tools to
+            help you organize seamlessly.
+          </p>
+        </section>
 
-            <div class="text-end">
-              <a class="btn btn-outline-dark me-2" href="./login.html" role="button">Login</a>
-              <a class="btn btn-primary me-2" href="./signup.html" role="button">Sign-up</a>
+        <section id="create" class="mb-4 p-4 border-start border-4 border-success bg-light rounded highlight-target">
+          <h4><i class="bi bi-calendar-plus me-2"></i>2. Create Your Event</h4>
+          <p>
+            Once logged in, click the <strong>"Create Event"</strong> button on your dashboard. Enter key details such
+            as your event name, date, time, venue, and optional event image. This forms the foundation of your planning
+            workspace.
+          </p>
+        </section>
+
+        <section id="tasks" class="mb-4 p-4 border-start border-4 border-warning bg-light rounded highlight-target">
+          <h4><i class="bi bi-check2-square me-2"></i>3. Add Tasks</h4>
+          <p>
+            Break down your event into actionable steps using the task list. Add custom tasks like “Book caterer” or
+            “Confirm guest list,” set due dates, and track their completion with intuitive checkboxes. It’s your to-do
+            list, evolved.
+          </p>
+        </section>
+
+        <section id="progress" class="mb-4 p-4 border-start border-4 border-info bg-light rounded highlight-target">
+          <h4><i class="bi bi-graph-up-arrow me-2"></i>4. Track Progress</h4>
+          <p>
+            Monitor real-time progress using dynamic progress bars. These visual indicators help you stay on top of
+            timelines, identify pending items, and ensure nothing falls through the cracks before the big day.
+          </p>
+        </section>
+
+        <section id="export" class="mb-4 p-4 border-start border-4 border-secondary bg-light rounded highlight-target">
+          <h4><i class="bi bi-download me-2"></i>5. Export & Share</h4>
+          <p>
+            Need to loop in your team or vendors? Export your event summary—including tasks and deadlines—as a
+            downloadable PDF. It’s perfect for sharing updates, keeping backups, or printing for offline use.
+          </p>
+        </section>
+
+        <section id="help" class="mb-5 highlight-target">
+          <h4 class="text-primary"><i class="bi bi-question-circle me-2"></i>Need Help?</h4>
+          <div class="alert alert-light border-start border-4 border-primary shadow-sm">
+            <p class="mb-1">💬 <strong>Maari, our built-in chatbot</strong> is here to help with common questions 24/7.</p>
+            <p class="mb-0">Prefer a human? Reach out via our <a href="about.html" class="text-decoration-underline">GitHub profiles</a> by clicking on our profiles.</p>
+          </div>
+
+          <div class="accordion mt-3" id="faqAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  Will you be adding more features in the future?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes. We have planned a lot of features into our wishlists.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="faqTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                  Can I invite team members to my event?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Not at the moment, we are implementing in the future! Stay Tuned :)
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Quick Navigation Sidebar -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="sticky-top" style="top: 200px;">
+          <div class="card shadow-sm mb-3" id="quick-nav">
+            <div class="card-body">
+              <h6 class="card-title text-primary">Quick Navigation</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#signup" class="text-decoration-none">1. Sign Up</a></li>
+                <li><a href="#create" class="text-decoration-none">2. Create Event</a></li>
+                <li><a href="#tasks" class="text-decoration-none">3. Add Tasks</a></li>
+                <li><a href="#progress" class="text-decoration-none">4. Track Progress</a></li>
+                <li><a href="#export" class="text-decoration-none">5. Export & Share</a></li>
+                <li><a href="#help" class="text-decoration-none">Need Help?</a></li>
+              </ul>
+            </div>
           </div>
         </div>
+      </div>
     </div>
-</header>
-<!-- End of Navigation -->
-
-<!-- Pricing Words -->
-<div class="container py-3">
-<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-    <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
-    <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
   </div>
-<!-- End of Pricing Words -->
+  <!-- End How It Works Section -->
 
-<!-- Price Compare -->
-<div class="container py-3">
-  <main>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Free</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Pro</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-bg-primary border-primary">
-            <h4 class="my-0 fw-normal">Enterprise</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-          </div>
-        </div>
-      </div>
+  <!-- Footer -->
+  <footer class="text-center py-4 border-top mt-5">
+    <p class="text-muted mb-1">© 2025 Eventwise by Nala</p>
+    <div>
+      <a href="./homepage.html" class="text-muted px-2 text-decoration-none">Home</a> |
+      <a href="./about.html" class="text-muted px-2 text-decoration-none">About</a> |
+      <a href="./features.html" class="text-muted px-2 text-decoration-none">Features</a> |
+      <a href="./howitworks.html" class="text-muted px-2 text-decoration-none">Documentation</a>
     </div>
+  </footer>
 
-    <h2 class="display-6 text-center mb-4">Compare plans</h2>
+  <!-- Bootstrap & Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./scripts/animations.js"></script>
 
-    <div class="table-responsive">
-      <table class="table text-center">
-        <thead>
-          <tr>
-            <th style="width: 34%;"></th>
-            <th style="width: 22%;">Free</th>
-            <th style="width: 22%;">Pro</th>
-            <th style="width: 22%;">Enterprise</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row" class="text-start">Public</th>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Private</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-          </tr>
-        </tbody>
+  <!-- Scroll & Highlight Script -->
+  <script>
+    document.querySelectorAll('#quick-nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
 
-        <tbody>
-          <tr>
-            <th scope="row" class="text-start">Permissions</th>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Sharing</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Unlimited members</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-          </tr>
-          <tr>
-            <th scope="row" class="text-start">Extra security</th>
-            <td></td>
-            <td></td>
-            <td><svg class="bi" width="24" height="24" role="img" aria-label="Included"><use xlink:href="#check"></use></svg></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-</div>
-<!-- End of Price Compare -->
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
 
-<!-- Footer -->
-<footer class="text-center py-4 border-top mt-5">
-  <p class="text-muted mb-1">© 2025 Eventwise by Nala</p>
-  <div>
-    <a href="./homepage.html" class="text-muted px-2 text-decoration-none">Home</a> |
-    <a href="./about.html" class="text-muted px-2 text-decoration-none">About</a> |
-    <a href="./features.html" class="text-muted px-2 text-decoration-none">Features</a> |
-    <a href="./howitworks.html" class="text-muted px-2 text-decoration-none">Documentation</a>
-  </div>
-</footer>
-<!-- End of Footer -->
- 
-<!--! Bootstrap Link Do Not Disturb -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<!--! End Bootstrap Link Do Not Disturb -->
+        if (target) {
+          const elementY = target.getBoundingClientRect().top + window.pageYOffset;
+          const windowHeight = window.innerHeight;
+          const elementHeight = target.offsetHeight;
+
+          const navbarHeight = 140; // adjust if your navbar is taller
+
+          const scrollTo = elementY - (windowHeight / 2) + (elementHeight / 2) - navbarHeight / 2;
+
+          window.scrollTo({
+            top: scrollTo,
+            behavior: 'smooth'
+          });
+
+          target.classList.add('highlighted');
+          setTimeout(() => {
+            target.classList.remove('highlighted');
+          }, 1000);
+        }
+      });
+    });
+  </script>
 </body>
 </html>

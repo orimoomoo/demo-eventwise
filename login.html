@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Eventwise</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- SweetAlert2 CSS and JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
+
 <body>
-    
-<!-- Navigation -->
-<header class="p-3 bg-light text-white">
+    <!-- Navigation -->
+  <header></header>  <!-- Placeholder for header partial -->
+
+    <!-- Sign In -->
     <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="./homepage.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="./images/Eventwise-removebg-preview.png" height="140">
-            </a>
+        <main class="form-signin w-25 m-auto mt-5 mb-5 pt-3 pb-5">
+            <form id="loginForm">
+                <h1 class="h3 mb-3 fw-normal">Sign in</h1>
 
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
-                <li><a href="./about.html" class="nav-link px-2 text-black">About</a></li>
-                <li><a href="./features.html" class="nav-link px-2 text-black">Features</a></li>
-                <li><a href="./pricing.html" class="nav-link px-2 text-black">Pricing</a></li>
-            </ul>
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                        required />
+                    <label for="floatingInput">Email address</label>
+                </div>
 
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required />
+                    <label for="floatingPassword">Password</label>
+                </div>
 
-            <div class="text-end">
-              <a class="btn btn-outline-dark me-2" href="./login.html" role="button">Login</a>
-              <a class="btn btn-primary me-2" href="./signup.html" role="button">Sign-up</a>
-          </div>
-        </div>
+                <button class="btn btn-success w-100 py-2" type="submit">
+                    Sign in
+                </button>
+
+                <div id="errorMessage" class="text-danger mt-3" style="display: none;"></div>
+            </form>
+        </main>
     </div>
-</header>
-<!-- End of Navigation -->
+    <!-- Sign In End -->
 
-<!-- Sign In -->
-<div class="container">
-  <main class="form-signin w-25 m-auto mt-5 mb-5 pt-3 pb-5">
-      <form>
-          <h1 class="h3 mb-3 fw-normal">Sign in</h1>
-
-          <div class="form-floating mb-2">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email address</label>
-          </div>
-
-          <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Password</label>
-          </div>
-
-          <button class="btn btn-success w-100 py-2" type="submit">Sign in</button>
-      </form>
-  </main>
-</div>
-<!-- Sign In End -->
-
-<!-- Footer -->
-<body class="d-flex flex-column min-vh-100">
-<div class="container my-auto">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-body-secondary">© 2025 Eventwise By Nala</p>
-
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" aria-label="Bootstrap">
-        <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg>
-        </a>
-
-        <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="./homepage.html" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="./about.html" class="nav-link px-2 text-body-secondary">About</a></li>
-            <li class="nav-item"><a href="./features.html" class="nav-link px-2 text-body-secondary">Features</a></li>
-            <li class="nav-item"><a href="./pricing.html" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-        </ul>
-    </footer>
-</div>
+<br><br><br>
+  <footer></footer>  <!-- Placeholder for footer partial -->
 </body>
 <!-- End of Footer -->
 <!--! Bootstrap Link Do Not Disturb -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
 <!--! End Bootstrap Link Do Not Disturb -->
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+<!-- other scripts as needed -->
+<script src="./scripts/include.js"></script>
+
+<script src="./scripts/apis.js"></script>
+<script src="./scripts/auth.js"></script>
+<script>
+  const emailInput = document.getElementById("floatingInput");
+  const passwordInput = document.getElementById("floatingPassword");
+
+  const emailLabel = document.querySelector("label[for='floatingInput']");
+  const passwordLabel = document.querySelector("label[for='floatingPassword']");
+
+  emailInput.addEventListener("input", () => {
+    emailLabel.style.display = emailInput.value ? "none" : "block";
+  });
+
+  passwordInput.addEventListener("input", () => {
+    passwordLabel.style.display = passwordInput.value ? "none" : "block";
+  });
+</script>
+<script src="./scripts/animations.js"></script>
 </body>
+
 </html>

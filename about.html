@@ -1,49 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventwise</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About | Eventwise</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <style>
+    .team-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    .team-card img {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .team-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    .team-role {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    img.img-thumbnail {
+     max-height: 400px;
+     object-fit: cover;
+    }
+
+  </style>
 </head>
 <body>
+
 <!-- Navigation -->
 <header class="p-3 bg-light text-white">
-    <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="./homepage.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="./images/Eventwise-removebg-preview.png" height="140">
-            </a>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
-                <li><a href="./about.html" class="nav-link px-2 text-secondary">About</a></li>
-                <li><a href="./features.html" class="nav-link px-2 text-black">Features</a></li>
-                <li><a href="./pricing.html" class="nav-link px-2 text-black">Pricing</a></li>
-            </ul>
-
-            <div class="btnOnTheNav">
-                <a class="btn btn-secondary me-2" href="./login.html" role="button">Login</a>
-                <a class="btn btn-primary me-2" href="./signup.html" role="button">Sign-up</a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="./homepage.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <img src="./images/Eventwise-removebg-preview.png" height="140">
+      </a>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="./homepage.html" class="nav-link px-2 text-black">Home</a></li>
+        <li><a href="./about.html" class="nav-link px-2 text-secondary">About</a></li>
+        <li><a href="./features.html" class="nav-link px-2 text-black">Features</a></li>
+        <li><a href="./howitworks.html" class="nav-link px-2 text-black">How It Works</a></li>
+      </ul>
+      <div class="btnOnTheNav">
+        <a class="btn btn-secondary me-2" href="./login.html" role="button">Login</a>
+        <a class="btn btn-primary me-2" href="./signup.html" role="button">Sign-up</a>
+      </div>
     </div>
+  </div>
 </header>
-<!-- End of Navigation -->
-<!-- About -->
-<div class="col-lg-8 mx-auto p-4 py-md-5">
-    <h1 class="text-body-emphasis p-3 mb-2 bg-warning text-white"> <strong>About Eventwise</strong></h1>
-    <img class="img-fluid img-thumbnail" width="700" height="50" src="https://images.theeventscalendar.com/uploads/2023/05/The-Benefits-of-Hiring-a-Professional-Event-Planner-1528x1016.jpg" class="rounded-5" alt="" loading="lazy">
-    <p class="fs-5 col-md-8">At Event Wise, we believe every event—whether an intimate birthday or a grand corporate gala—should be as unique as the people celebrating it. Founded in 2025 by Team Nala, we blend meticulous planning, creative flair, and cutting-edge tech to turn your ideas into unforgettable experiences.</p>
-        <h4><strong>Why Choose Us?</strong></h4>
-        <p><h7>&#9989 Stress-Free Planning: Our app and team handle the logistics—you enjoy the magic.</p>
-        <p>&#9989 Tailored Creativity: No cookie-cutter events. We design around your story.</p>
-        <p>&#9989 Tech Meets Touch: AI-powered tools and human experts for seamless execution.</p>
-        <p>&#128165 100% You-Focused: From budget hacks to VIP vendor access, we’ve got your back.</h7></p>
-        <h4><strong>Our Story</h4></strong>
-        <p><h7>What started as humble beginning grew into 500+ events planned islandwide —all because we’re obsessed with making your milestones effortless and extraordinary.</h7></p>
-</div>
-<!-- End of About -->
+<!-- End Navigation -->
+<!-- Meet the Team -->
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="text-center mb-5"><strong>Meet the Team</strong></h2>
+    <div class="row justify-content-center g-4">
+      <div class="col-sm-6 col-md-4 text-center">
+
+    <a href="https://github.com/orimoomoo" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="team-card p-3 bg-white shadow-sm">
+          <img src="./images/bowtieacnhprofilepic.png" alt="Team Member 1">
+          <div class="team-name">Ahmad Dedy</div>
+          <div class="team-role">Lead in Programmming<br>Front-End & Back-End</div>
+        </div>
+    </a>
+      </div>
+      <div class="col-sm-6 col-md-4 text-center">
+            <a href="https://github.com/Hnaseemap" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="team-card p-3 bg-white shadow-sm">
+          <img src="./images/hathar.jpeg" alt="Team Member 2">
+          <div class="team-name">Hathar Naseema</div>
+          <div class="team-role">Lead in Design UI/UX<br>Front-End</div>
+        </div>
+    </a>
+      </div>
+      <div class="col-sm-6 col-md-4 text-center">
+        <a href="https://github.com/ArunWahab23" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="team-card p-3 bg-white shadow-sm">
+          <img src="./images/arunw.png" alt="Team Member 3">
+          <div class="team-name">Arun Wahab</div>
+          <div class="team-role">Lead in Product Development<br>Front-End</div>
+        </div>
+    </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Meet the Team -->
+
+<!-- About Section -->
+<section class="py-5 bg-light">
+  <div class="container px-4 px-md-5">
+    <div class="text-center mb-5">
+      <h1 class="display-5 fw-bold text-secondary">About Eventwise</h1>
+      <p class="lead text-muted">Plan. Create. Track. Manage.</p>
+    </div>
+
+    <div class="row align-items-center g-5">
+      <!-- Image -->
+      <div class="col-lg-6">
+        <img 
+          src="https://images.theeventscalendar.com/uploads/2023/05/The-Benefits-of-Hiring-a-Professional-Event-Planner-1528x1016.jpg" 
+          alt="Event Planning"
+          class="img-fluid rounded shadow-sm"
+          style="max-height: 420px; object-fit: cover;"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- Text Content -->
+      <div class="col-lg-6">
+        <p class="fs-5 mb-3">
+          At <strong>Eventwise</strong>, we believe every event—whether an intimate birthday or a grand corporate gala—should be as unique as the people celebrating it.
+        </p>
+        <p>
+          Founded in 2025 by <strong>Team Nala</strong>, we blend meticulous planning, creative flair, and cutting-edge tech to turn your ideas into unforgettable experiences.
+        </p>
+
+        <h4 class="mt-4"><strong>Why Choose Us?</strong></h4>
+        <ul class="list-unstyled ps-3">
+          <li class="mb-2"><strong>Stress-Free Planning:</strong> Our app and team handle the logistics—you enjoy the magic.</li>
+          <li class="mb-2"><strong>Tailored Creativity:</strong> No cookie-cutter events. We design around your story.</li>
+          <li class="mb-2"><strong>Tech Meets Touch:</strong> AI-powered tools and human experts for seamless execution.</li>
+          <li class="mb-2"><strong>100% You-Focused:</strong> From budget hacks to VIP vendor access, we’ve got your back.</li>
+        </ul>
+
+        <h4 class="mt-4"><strong>Our Story</strong></h4>
+        <p>
+          What started as a humble beginning grew into 500+ events planned islandwide — all because we’re obsessed with making your milestones effortless and extraordinary.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="text-center py-4 border-top mt-5">
   <p class="text-muted mb-1">© 2025 Eventwise by Nala</p>
@@ -54,10 +167,9 @@
     <a href="./howitworks.html" class="text-muted px-2 text-decoration-none">Documentation</a>
   </div>
 </footer>
-<!-- End of Footer -->
- 
-<!--! Bootstrap Link Do Not Disturb -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<!--! End Bootstrap Link Do Not Disturb -->
+<!-- End Footer -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./scripts/animations.js"></script>
 </body>
 </html>
