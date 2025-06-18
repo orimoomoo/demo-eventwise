@@ -213,7 +213,7 @@ function renderEventList(events) {
 
   events.forEach(event => {
     container.append(createEventItem(event));
-    refreshTasksForEvent(event.id);  // ✅ consistent task rendering everywhere
+    refreshTasksForEvent(event.id);  // consistent task rendering everywhere
   });
 
   container.append('<div class="end-of-list text-center text-muted mt-3">End Of List</div>');
@@ -263,7 +263,7 @@ createTask(eventId, taskData,
     const taskModal = bootstrap.Modal.getInstance(document.getElementById('taskModal'));
     taskModal.hide();
 
-    // ✅ Immediately refresh the task container
+    // Immediately refresh the task container
     refreshTasksForEvent(eventId);
 
     Swal.fire({
@@ -514,11 +514,11 @@ $(document).on('click', '.task-delete-btn', function () {
     if (result.isConfirmed) {
       deleteTask(taskId,
         () => {
-          // ✅ Now safely get eventId using the saved reference
+          // Now safely get eventId using the saved reference
           const eventId = $button.closest('[data-task-container-for]').data('task-container-for')
               || $button.closest('.event-item').data('event-id');
 
-          refreshTasksForEvent(eventId); // 👈 this keeps it consistent with task creation
+          refreshTasksForEvent(eventId); // this keeps it consistent with task creation
 
           Swal.fire('Deleted!', 'Task has been removed.', 'success');
         },
@@ -564,7 +564,7 @@ $(document).on('change', '.task-check', function () {
     || $(this).closest('.event-item').data('event-id');
 
   if (eventId) {
-    // ✅ Delay refresh to avoid interfering with checkbox interaction
+    // Delay refresh to avoid interfering with checkbox interaction
     setTimeout(() => {
       refreshTasksForEvent(eventId);
     }, 250); // ~250ms is smooth
