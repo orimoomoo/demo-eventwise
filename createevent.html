@@ -60,13 +60,17 @@
         <div class="card p-5">
 
           <form id="createEventForm">
-            <div class="mb-3">
+            <div class="mb-3 d-block">
               <label for="eventName" class="form-label">Event Name</label>
               <input type="text" class="form-control" id="eventName" name="eventName">
             </div>
-            <div class="mb-3">
+            <div class="mb-3 d-block">
               <label for="eventDescription" class="form-label">Event Description</label>
               <input type="text" class="form-control" id="eventDescription" name="eventDescription">
+            </div>
+            <div class="mb-3 d-block">
+              <label for="eventDate" class="form-label d-block">Event Date</label>
+              <input type="date" class="form-control w-auto" id="eventDate" name="eventDate">
             </div>
             <button type="submit" class="btn btn-primary">Create Event</button>
           </form>

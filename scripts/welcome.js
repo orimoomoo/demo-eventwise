@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    debugger;
+    // debugger;
   const email = localStorage.getItem('userEmail');
 
   if (!email) {

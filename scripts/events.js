@@ -123,16 +123,18 @@ $(document).ready(function () {
 
         const name = $('#eventName').val().trim();
         const description = $('#eventDescription').val().trim();
-
-        if (!name || !description) {
-            alert('Please fill in both name and description.');
+        const date = $('#eventDate').val(); 
+        
+        if (!name || !description || !date) {
+            alert('Please fill in name, description and date.');
             return;
         }
 
         const eventData = {
             name,
             description,
-            imageUrl: "https://example.com/image.jpg"
+            imageUrl: "https://example.com/image.jpg", 
+            date: date
         };
 
         createEvent(
@@ -163,61 +165,72 @@ $(document).ready(function () {
     });
 
     // Render single event item
-function createEventItem(event) {
-  return `
-    <div class="event-item mb-3 p-3 border rounded" data-event-id="${event.id}">
-      <div class="event-info mb-2">
-        <div class="event-name fw-bold text-danger">${escapeHtml(event.name)}</div>
-        <div class="event-description text-muted">${escapeHtml(event.description)}</div>
-      </div>
+    function createEventItem(event) {
 
-      <div class="task-list mt-2" data-task-container-for="${event.id}">
-        <small class="text-muted">No tasks yet.</small>
-      </div>
-        <div class="event-actions">
-          <button class="btn btn-outline-primary btn-sm action-btn task-btn">
-            <i class="bi"></i></i> Add Task
-          </button>
-          <button class="btn btn-outline-secondary btn-sm action-btn task-view-btn">
-          <i class="bi"></i> All Tasks
-          </button>
-          <button class="btn btn-outline-primary btn-sm action-btn edit-btn">
-            <i class="bi bi-pencil"></i> Edit
-          </button>
-          <button class="btn btn-primary btn-sm action-btn view-btn">
-            <i class="bi bi-eye"></i> View
-          </button>
-          <button class="btn btn-outline-danger btn-sm action-btn delete-btn">
-            <i class="bi bi-trash"></i> Delete
-          </button>
+      const eventDate = new Date(event.date);
+
+      const weekday = eventDate.toLocaleString('en-US', { weekday: 'long' });  // e.g. "Friday"
+      const month = eventDate.toLocaleString('en-US', { month: 'short' });     // e.g. "Oct"
+      const day = eventDate.getDate().toString().padStart(2, '0');             // e.g. "31"
+      const year = eventDate.getFullYear();                                    // e.g. "2025"
+
+      const formattedDate = `${weekday} ${day} ${month} ${year}`;
+
+      return `
+        <div class="event-item mb-3 p-3 border rounded" data-event-id="${event.id}">
+          <div class="event-info mb-2">
+            <div class="event-name fw-bold text-danger">${escapeHtml(event.name)}</div>
+            <div class="event-description text-muted">${escapeHtml(event.description)}</div>
+            <div class="event-description text-muted">${escapeHtml(formattedDate)}</div>
+          </div>
+
+          <div class="task-list mt-2" data-task-container-for="${event.id}">
+            <small class="text-muted">No tasks yet.</small>
+          </div>
+            <div class="event-actions">
+              <button class="btn btn-outline-primary btn-sm action-btn task-btn">
+                <i class="bi"></i></i> Add Task
+              </button>
+              <button class="btn btn-outline-secondary btn-sm action-btn task-view-btn">
+              <i class="bi"></i> All Tasks
+              </button>
+              <button class="btn btn-outline-primary btn-sm action-btn edit-btn">
+                <i class="bi bi-pencil"></i> Edit
+              </button>
+              <button class="btn btn-primary btn-sm action-btn view-btn">
+                <i class="bi bi-eye"></i> View
+              </button>
+              <button class="btn btn-outline-danger btn-sm action-btn delete-btn">
+                <i class="bi bi-trash"></i> Delete
+              </button>
+            </div>
+
+
         </div>
-
-
-    </div>
-  `;
-}
+      `;
+    }
 
     function escapeHtml(text) {
         return $('<div>').text(text).html();
     }
 
     // Render event list in DOM
-function renderEventList(events) {
-  const container = $('.event-list');
-  container.empty();
+    function renderEventList(events) {
+      const container = $('.event-list');
+      container.empty();
 
-  if (!events || events.length === 0) {
-    container.html('<p>No events found.</p>');
-    return;
-  }
+      if (!events || events.length === 0) {
+        container.html('<p>No events found.</p>');
+        return;
+      }
 
-  events.forEach(event => {
-    container.append(createEventItem(event));
-    refreshTasksForEvent(event.id);  // consistent task rendering everywhere
-  });
+      events.forEach(event => {
+        container.append(createEventItem(event));
+        refreshTasksForEvent(event.id);  // consistent task rendering everywhere
+      });
 
-  container.append('<div class="end-of-list text-center text-muted mt-3">End Of List</div>');
-}
+      container.append('<div class="end-of-list text-center text-muted mt-3">End Of List</div>');
+    }
 
 
     // Load events and render
@@ -226,7 +239,7 @@ function renderEventList(events) {
             renderEventList,
             (xhr) => alert('Failed to load events: ' + (xhr.responseJSON?.message || xhr.statusText))
         );
-      }
+    }
 
 
     // TODO working on Task
@@ -258,23 +271,23 @@ function renderEventList(events) {
 
       const taskData = { description, completed };
 
-createTask(eventId, taskData,
-  () => {
-    const taskModal = bootstrap.Modal.getInstance(document.getElementById('taskModal'));
-    taskModal.hide();
+      createTask(eventId, taskData,
+        () => {
+          const taskModal = bootstrap.Modal.getInstance(document.getElementById('taskModal'));
+          taskModal.hide();
 
-    // Immediately refresh the task container
-    refreshTasksForEvent(eventId);
+          // Immediately refresh the task container
+          refreshTasksForEvent(eventId);
 
-    Swal.fire({
-      icon: 'success',
-      title: 'Task Created!',
-      timer: 1200,
-      showConfirmButton: false
-    });
-  },
-  () => Swal.fire('Error', 'Failed to create task', 'error')
-);
+          Swal.fire({
+            icon: 'success',
+            title: 'Task Created!',
+            timer: 1200,
+            showConfirmButton: false
+          });
+        },
+        () => Swal.fire('Error', 'Failed to create task', 'error')
+      );
     });
 
     // AJAX call to backend
@@ -344,50 +357,48 @@ createTask(eventId, taskData,
 
     // TODO update events (includes delete)
 
-$('.event-list').on('click', '.task-update-btn', function () {
-  const eventId = $(this).closest('.event-item').data('event-id');
+    $('.event-list').on('click', '.task-update-btn', function () {
+      const eventId = $(this).closest('.event-item').data('event-id');
 
-  fetchTasksByEvent(eventId,
-    function (tasks) {
-      let html = `<ul class="list-group text-start">`;
-      tasks.forEach(task => {
-      html += `
-        <li class="list-group-item d-flex justify-content-between align-items-center task-item" data-task-id="${task.id}">
-          <div class="form-check">
-            <input class="form-check-input task-check" type="checkbox" 
-              data-task-id="${task.id}" ${task.completed ? 'checked' : ''}>
-            <label class="form-check-label ms-2">
-              ${escapeHtml(task.description)}
-            </label>
-          </div>
-          <button class="btn btn-sm btn-outline-danger task-delete-btn ms-2">
-            <i class="bi bi-trash"></i>
-          </button>
-        </li>`;
-    });
-    html += `</ul>`;
-
-    Swal.fire({
-      title: 'Task List',
-      html: html || 'No tasks found.',
-      width: 500,
-      confirmButtonText: 'Ok',
-      didOpen: () => {
-        $('.task-check').on('change', function () {
-          const taskId = $(this).data('task-id');
-          const completed = $(this).is(':checked');
-          updateTaskCompletion(taskId, completed);
+      fetchTasksByEvent(eventId,
+        function (tasks) {
+          let html = `<ul class="list-group text-start">`;
+          tasks.forEach(task => {
+          html += `
+            <li class="list-group-item d-flex justify-content-between align-items-center task-item" data-task-id="${task.id}">
+              <div class="form-check">
+                <input class="form-check-input task-check" type="checkbox" 
+                  data-task-id="${task.id}" ${task.completed ? 'checked' : ''}>
+                <label class="form-check-label ms-2">
+                  ${escapeHtml(task.description)}
+                </label>
+              </div>
+              <button class="btn btn-sm btn-outline-danger task-delete-btn ms-2">
+                <i class="bi bi-trash"></i>
+              </button>
+            </li>`;
         });
-      }
+        html += `</ul>`;
+
+        Swal.fire({
+          title: 'Task List',
+          html: html || 'No tasks found.',
+          width: 500,
+          confirmButtonText: 'Ok',
+          didOpen: () => {
+            $('.task-check').on('change', function () {
+              const taskId = $(this).data('task-id');
+              const completed = $(this).is(':checked');
+              updateTaskCompletion(taskId, completed);
+            });
+          }
+        });
+      },
+        function () {
+          Swal.fire('Error', 'Failed to load tasks', 'error');
+        }
+      );
     });
-  },
-    function () {
-      Swal.fire('Error', 'Failed to load tasks', 'error');
-    }
-  );
-});
-
-
 
     function fetchTasksByEvent(eventId, onSuccess, onError) {
       $.ajax({
@@ -409,10 +420,21 @@ $('.event-list').on('click', '.task-update-btn', function () {
 
         fetchEventById(eventId,
             function (event) {
+
+                const eventDate = new Date(event.date);
+
+                const day = eventDate.getDate().toString().padStart(2, '0');          // "31"
+                const month = (eventDate.getMonth() + 1).toString().padStart(2, '0'); // "10"
+                const year = eventDate.getFullYear();                                 // "2025"
+            
+                const formattedDate = `${year}-${month}-${day}`;
+
+                console.log(event);
                 $('#editEventId').val(event.id);
                 $('#editEventName').val(event.name);
                 $('#editEventDescription').val(event.description);
                 $('#editEventImageUrl').val(event.imageUrl || '');
+                $('#eventDate').val(formattedDate);
 
                 // Initialize and show modal here
                 editModal = new bootstrap.Modal(document.getElementById('editEventModal'));
@@ -433,6 +455,7 @@ $('.event-list').on('click', '.task-update-btn', function () {
             name: $('#editEventName').val().trim(),
             description: $('#editEventDescription').val().trim(),
             imageUrl: $('#editEventImageUrl').val().trim(),
+            date: $('#eventDate').val()
         };
 
         if (!updatedEvent.name || !updatedEvent.description) {
